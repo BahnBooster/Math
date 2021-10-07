@@ -11,10 +11,9 @@ LICENSE file in the root directory of this project.
 
 Discription:
 
-This is the main file of the prime number program. The purpose is to get the prime numbers from 2 to MAX.
+This is a prime number generator. The purpose is to get the prime numbers from 2 to MAX.
 
 How does it work?
-
 The program iterates (+step size 1) a counter (i) form 0 to MAX. The first prime number is given (2).
 Form there the program checks the current step to be prime.
 

@@ -34,7 +34,7 @@ LAST determines the count of the last prime numbers you want to see (0 for all).
 //------Symbolic constants and macros------//
 #define MAX 7919U
 #define ROW 10U
-#define LAST 0U 
+#define LAST 0U
 
 #if MAX <= 1
 #error "MAX hast to be greater than 1!"
@@ -64,13 +64,13 @@ int main(void)
   unsigned int prime[MAX];
   
   float progress = 0;
-  float step = 0;  
+  float step = 0;
 
   //First prime number
   prime[p] = 2;
   
   //2 | for each % progress
-  step = (float) MAX / 50;  
+  step = (float) MAX / 50;
   progress = step;
   
   if (step <= 1)
@@ -92,13 +92,13 @@ int main(void)
       printf("|");
       progress += step;
       fflush(stdout);
-    } 
+    }
     else if (step <= 1 && progress == 100)
     {
       printf("||||||||||||||||||||||||||||||||||||||||||||||||||");
       progress += step;
-      fflush(stdout);      
-    }    
+      fflush(stdout);
+    }
     
     if (i > prime[p])
     {
@@ -135,7 +135,7 @@ int main(void)
     printf("     ");
     r++;
   }
-  printf(" |\n|----------------|");  
+  printf(" |\n|----------------|");
   
   r = 0;
   while (r < ROW)

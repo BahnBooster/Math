@@ -18,13 +18,13 @@ The program iterates (+step size 1) a counter (i) from 0 to MAX. The first prime
 From there the program checks the current step to be prime.
 
 How exactly?
-For each step i, the modulo operation is performed on i and each previously found prime number, j. If i mod j ever
-returns a remainder of 0, it is known that i is not prime! If i mod j returns a remainder, then i mod (j-1) is checked.
+For each step i, the modulo operation is performed on i and each previously found prime number, prime[j]. If i mod prime[j] ever
+returns a remainder of 0, it is known that i is not prime! If i mod prime[j] returns a remainder, then i mod prime[j-1] is checked.
 This continues for each previously found prime number, until a remainder of 0 is returned, or all the numbers have been
 checked. If i is determined to be prime, it is saved, and the process repeats for (i + 1), up until i = MAX
 
-ROW determines the count of prime numbers for each line.
-LAST determines the count of the last prime numbers you want to see (0 for all).
+ROW determines the number of prime numbers displayed per each line.
+LAST determines the number of prime numbers you want to see, starting at the end of the prime number sequence (0 for all).
 */
 
 //------Include of libraries------//

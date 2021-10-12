@@ -18,11 +18,10 @@ The program iterates (+step size 1) a counter (i) from 0 to MAX. The first prime
 From there the program checks the current step to be prime.
 
 How exactly?
-If the current step i is bigger than the last found prime number, it will check the divisibility from i through the last found prime
-number with the modulo operation. Without a remainder (rest 0) i is not a prime number! Then it breaks and iterates i again. If the
-current step gets a remainder (rest > 0), it will check the divisibility from i through the prime number found before the last prime
-number, and so on. If the current step is not divisible through any former prime numbers, the next prime number has been found. This
-number will be saved, and the whole process begins all over again.
+For each step i, the modulo operation is performed on i and each previously found prime number, j. If i mod j ever
+returns a remainder of 0, it is known that i is not prime! If i mod j returns a remainder, then i mod (j-1) is checked.
+This continues for each previously found prime number, until a remainder of 0 is returned, or all the numbers have been
+checked. If i is determined to be prime, it is saved, and the process repeats for (i + 1), up until i = MAX
 
 ROW determines the count of prime numbers for each line.
 LAST determines the count of the last prime numbers you want to see (0 for all).
@@ -32,9 +31,9 @@ LAST determines the count of the last prime numbers you want to see (0 for all).
 #include <stdio.h>
 
 //------Symbolic constants and macros------//
-#define MAX 1000100U
-#define ROW 1U
-#define LAST 10U
+#define MAX 7919U
+#define ROW 10U
+#define LAST 0U
 
 #if MAX <= 1
 #error "MAX has to be greater than 1!"

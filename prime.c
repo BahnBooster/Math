@@ -9,13 +9,13 @@ All rights reserved.
 This source code is licensed under the Clear BSD License found in the
 LICENSE file in the root directory of this project.
 
-Discription:
+Description:
 
 This is a prime number generator. The purpose is to get the prime numbers from 2 to MAX.
 
 How does it work?
-The program iterates (+step size 1) a counter (i) form 0 to MAX. The first prime number is given (2).
-Form there the program checks the current step to be prime.
+The program iterates (+step size 1) a counter (i) from 0 to MAX. The first prime number is given (2).
+From there the program checks the current step to be prime.
 
 How exactly?
 If the current step i is bigger than the last found prime number, it will check the divisibility from i through the last found prime
@@ -32,12 +32,12 @@ LAST determines the count of the last prime numbers you want to see (0 for all).
 #include <stdio.h>
 
 //------Symbolic constants and macros------//
-#define MAX 7919U
-#define ROW 10U
-#define LAST 0U
+#define MAX 1000100U
+#define ROW 1U
+#define LAST 10U
 
 #if MAX <= 1
-#error "MAX hast to be greater than 1!"
+#error "MAX has to be greater than 1!"
 #endif
 
 #if MAX >= 10090 && ROW > 1
@@ -49,7 +49,7 @@ LAST determines the count of the last prime numbers you want to see (0 for all).
 #endif
 
 #if ROW <= 0
-#error "ROW hast to be greater than 0!"
+#error "ROW has to be greater than 0!"
 #endif
 
 //------Main function (program)------//
